@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.js'></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.css' rel='stylesheet' />
+
+        <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="vendor/css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100' rel='stylesheet' type='text/css'>
+        <title>MavShack</title>
+
+    </head>
+
+    <body>
+
+        <header>
+
+
+               <div class="upper-section-search" id="newboxes1">
+                 <a href="javascript:showonlyone('newboxes2');"><img src="resources/images/Search-icon-grey.png" alt="Search Button" class="btn-search"></a>
+
+                </div>
+            <div id='map'>
+            </div>
+            <script>
+                    mapboxgl.accessToken = 'pk.eyJ1IjoibW11c3RhZmFzYWVlZCIsImEiOiJjaXB4dGNuaXEwMDdjaHhub3NldjE2NHlzIn0.-gxdYD3aEaOxuOK408r-6A';
+                    var map = new mapboxgl.Map({
+                        container: 'map',
+                        style: 'mapbox://styles/mmustafasaeed/ciq0qzgu2002adtnpv99alak9'
+                        //interactive: false
+                        });
+            </script>
+            <div id="over-map-navigation">
+
+                <nav>
+                    <img src="resources/images/logo-blue.png" alt="The Rules logo" class="logo">
+                    <a href="javascript:showonlyone('newboxes1');"><img src="resources/images/Search-icon-grey.png" alt="Search Button" class="btn-search"></a>
+                </nav>
+
+
+            </div>
+
+            <script>
+
+
+
+
+                function showonlyone(thechosenone) {
+                     $('.upper-section-search').each(function(index) {
+                      if ($(this).attr("id") == thechosenone) {
+
+                                  $(this).show(600);
+
+
+                      }
+                      else {
+                           $(this).hide(600);
+                      }
+                     });
+                    }
+            </script>
+
+             <div id="over_map">
+
+
+                <!-- <h1>Want to change<br>the rules?</h1>
+                 <a class="btn btn-full" href="#">Join us!</a>
+                 <a class="btn btn-ghost" href="#">Know more</a> -->
+             </div>
+        </header>
+        <section>
+
+
+        </section>
+
+
+    </body>
+
+</html>
