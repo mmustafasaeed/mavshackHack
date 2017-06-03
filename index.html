@@ -1,83 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-    <head>
+        <head>
 
-        <script src='https://api.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.js'></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.css' rel='stylesheet' />
+            <script src='https://api.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.js'></script>
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+            <link href='https://api.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.css' rel='stylesheet' />
 
-        <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="vendor/css/Grid.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/style.css">
-        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100' rel='stylesheet' type='text/css'>
-        <title>MavShack</title>
+            <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css">
+            <link rel="stylesheet" type="text/css" href="vendor/css/Grid.css">
+            <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+            <link href='https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100' rel='stylesheet' type='text/css'>
+            <title>MavShack</title>
 
-    </head>
+        </head>
 
-    <body>
+        <body>
 
-        <header>
+            <div id="wrapper">
+                <div class="overlay"></div>
 
-
-               <div class="upper-section-search" id="newboxes1">
-                 <a href="javascript:showonlyone('newboxes2');"><img src="resources/images/Search-icon-grey.png" alt="Search Button" class="btn-search"></a>
-
-                </div>
-            <div id='map'>
-            </div>
-            <script>
-                    mapboxgl.accessToken = 'pk.eyJ1IjoibW11c3RhZmFzYWVlZCIsImEiOiJjaXB4dGNuaXEwMDdjaHhub3NldjE2NHlzIn0.-gxdYD3aEaOxuOK408r-6A';
-                    var map = new mapboxgl.Map({
-                        container: 'map',
-                        style: 'mapbox://styles/mmustafasaeed/ciq0qzgu2002adtnpv99alak9'
-                        //interactive: false
-                        });
-            </script>
-            <div id="over-map-navigation">
-
-                <nav>
-                    <img src="resources/images/logo-blue.png" alt="The Rules logo" class="logo">
-                    <a href="javascript:showonlyone('newboxes1');"><img src="resources/images/Search-icon-grey.png" alt="Search Button" class="btn-search"></a>
+                <!-- Sidebar -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+                    <ul class="nav sidebar-nav">
+                        <li class="sidebar-brand">
+                            <a href="#">
+                                Mavshack
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile.html">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                    </ul>
                 </nav>
+                <!-- /#sidebar-wrapper -->
 
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                    <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                        <span class="hamb-top"></span>
+                        <span class="hamb-middle"></span>
+                        <span class="hamb-bottom"></span>
+                    </button>
+                    <div class="container">
+                        <div class="upper-section-search" id="newboxes1">
+                            <a href="javascript:showonlyone('newboxes2');"><img src="resources/images/Search-icon-grey.png" alt="Search Button" class="btn-search"></a>
+
+                        </div>
+                        <div id='map'>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#page-content-wrapper -->
 
             </div>
+            <!-- /#wrapper -->
 
-            <script>
+        </body>
 
+        <script>
+            $(document).ready(function () {
+                var trigger = $('.hamburger'),
+                    overlay = $('.overlay'),
+                    isClosed = false;
 
+                trigger.click(function () {
+                    hamburger_cross();
+                });
 
+                function hamburger_cross() {
 
-                function showonlyone(thechosenone) {
-                     $('.upper-section-search').each(function(index) {
-                      if ($(this).attr("id") == thechosenone) {
-
-                                  $(this).show(600);
-
-
-                      }
-                      else {
-                           $(this).hide(600);
-                      }
-                     });
+                    if (isClosed == true) {
+                        overlay.hide();
+                        trigger.removeClass('is-open');
+                        trigger.addClass('is-closed');
+                        isClosed = false;
+                    } else {
+    //                    overlay.show();
+                        trigger.removeClass('is-closed');
+                        trigger.addClass('is-open');
+                        isClosed = true;
                     }
-            </script>
+                }
 
-             <div id="over_map">
-
-
-                <!-- <h1>Want to change<br>the rules?</h1>
-                 <a class="btn btn-full" href="#">Join us!</a>
-                 <a class="btn btn-ghost" href="#">Know more</a> -->
-             </div>
-        </header>
-        <section>
-
-
-        </section>
-
-
-    </body>
-
-</html>
+                $('[data-toggle="offcanvas"]').click(function () {
+                    $('#wrapper').toggleClass('toggled');
+                });
+            });
+        </script>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoibW11c3RhZmFzYWVlZCIsImEiOiJjaXB4dGNuaXEwMDdjaHhub3NldjE2NHlzIn0.-gxdYD3aEaOxuOK408r-6A';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mmustafasaeed/ciq0qzgu2002adtnpv99alak9'
+                //interactive: false
+            });
+        </script>
+        <script>
+            function showonlyone(thechosenone) {
+                $('.upper-section-search').each(function(index) {
+                    if ($(this).attr("id") == thechosenone) {
+                        $(this).show(600);
+                    }
+                    else {
+                        $(this).hide(600);
+                    }
+                });
+            }
+        </script>
+    </html>
