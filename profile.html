@@ -2,11 +2,18 @@
 <html lang="en">
 
 <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.js'></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.20.1/mapbox-gl.css' rel='stylesheet' />
 
+    <link rel="stylesheet" type="text/css" href="resources/css/profile.css">
     <link rel="stylesheet" type="text/css" href="vendor/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="vendor/css/Grid.css">
     <link rel="stylesheet" type="text/css" href="resources/css/style.css">
@@ -18,6 +25,8 @@
 </head>
 
 <body>
+
+
 
 <div id="wrapper">
     <div class="overlay"></div>
@@ -31,7 +40,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">Profile</a>
+                <a href="profile.html">Profile</a>
             </li>
             <li>
                 <a href="#">About</a>
@@ -48,11 +57,96 @@
             <span class="hamb-bottom"></span>
         </button>
         <div class="container">
-            <!-- put content here -->
+            <h2 class="profileHeading">Profile</h2>
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" class="favoritesHeading underline" href="#favorites">Favorites</a></li>
+                <li><a data-toggle="tab" class="locationPreferencesHeading" href="#locPref">Location Preferences</a></li>
+                <li><a data-toggle="tab" class="socialMediaHeading" href="#socialMedia">Social Media</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="favorites" class="tab-pane fade in active">
+                    <h3>Favorites</h3>
+                    <div class="col-xs-3">
+                        <br>
+                        <br>
+                        <div class="col-xs-7 inline">
+                        <button type="button" style="margin-top: 20px" class="btn btn-danger">Comedy </button>
+                        </div>
+                        <div class="col-xs-3 inline">
+                            <img class="inline cancel" style="margin-top: 20px" src="resources/images/cancel.png"/>
+                        </div>
+                        <div class="col-xs-1 inline"></div>
+
+
+                        <div class="col-xs-1 inline"></div>
+                        <div class="col-xs-7 inline">
+                        <button type="button" style="margin-top: 20px" class="btn btn-warning">Sports </button>
+                        </div>
+                        <div class="col-xs-3 inline">
+                            <img class="inline cancel" style="margin-top: 20px" src="resources/images/cancel.png"/>
+                        </div>
+                        <div class="col-xs-1 inline"></div>
+
+
+                        <div class="col-xs-1 inline"></div>
+                        <div class="col-xs-7 inline">
+                        <button type="button" style="margin-top: 20px" class="btn btn-primary">Sci-Fi </button>
+                        </div>
+                        <div class="col-xs-3 inline">
+                            <img class="inline cancel" style="margin-top: 20px" src="resources/images/cancel.png"/>
+                        </div>
+                        <div class="col-xs-1 inline"></div>
+
+
+                        <div class="col-xs-1 inline"></div>
+                        <div class="col-xs-10 inline">
+                            <button type="button" style="margin-top: 20px" class="btn btn-md btn-success">Add new +</button>
+                        </div>
+                        <div class="col-xs-1 inline"></div>
+
+
+                    </div>
+                    <div class="col-xs-3"></div>
+                    <div class="col-xs-6">
+                        <h3 style="text-align: center">Watch History</h3>
+                        <img style="padding-left: 140px" src="resources/images/pie-sample.png">
+                    </div>
+                </div>
+                <div id="locPref" class="tab-pane fade">
+                    <h3>Location Preferences</h3>
+                    <p>Some content in menu 1.</p>
+                </div>
+                <div id="socialMedia" class="tab-pane fade">
+                    <h3>Social Media</h3>
+                    <p>Some content in menu 2.</p>
+                </div>
+            </div>
+
+
+
+<!--            <div class="col-xs-4">
+                <a href="favorites.html" class="favoritesHeading underline"><h4>Favorites</h4></a>
+            </div>
+            <div class="col-xs-4">
+                <a href="locationPreferences.html" class="locationPreferencesHeading"><h4>Location Preferences</h4></a>
+            </div>
+            <div class="col-xs-4">
+                <a href="socialMedia.html" class="socialMediaHeading" disabled>
+                    <h4>Social Media</h4></a>
+            </div>
+
+            <br>
+            <br>-->
+
+<!--
+        </div>
         </div>
     </div>
     <!-- /#page-content-wrapper -->
-
+        </div>
+    </div>
 </div>
 <!-- /#wrapper -->
 

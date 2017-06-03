@@ -1,0 +1,21 @@
+.profileHeading{
+    text-align: center;
+}
+
+.socialMediaHeading, .locationPreferencesHeading, .favoritesHeading{
+    color: black;
+    text-align: center;
+}
+
+.inline{
+    display: inline;
+}
+
+.cancel{
+    width: 100%;
+    height: auto;
+}
+
+.btn-success{
+    width: 100%;
+}
